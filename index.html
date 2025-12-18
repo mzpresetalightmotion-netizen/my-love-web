@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>longteks by Mv37</title>
+<style>
+/* Background gradient bergerak */
+body {
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+  color: white;
+  font-family: Monospace;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Overlay semua popup */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9); /* background redup */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Kotak popup */
+.popup {
+  background: #111;
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 300px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+}
+
+/* Popup kedua */
+#popup2 {
+  position: fixed;
+  z-index: 1001;
+}
+
+/* Tombol IYA */
+#btnIya {
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1002;
+}
+
+/* Tombol ENGGA */
+#btnEngga {
+  position: absolute;
+  z-index: 1003;
+  top: 100px;
+  left: 50px;
+}
+
+/* Gaya gambar */
+img {
+  border-radius: 25px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+<body>
+
+<!-- POPUP 1 -->
+<div id="popup1" class="overlay">
+  <div class="popup">
+    <p>ini bukan website berbahaya, ini bukan link phishing melainkan suatu pesan untuk kamu</p>
+    <button id="btnOk">OKE</button>
+  </div>
+</div>
+
+<!-- POPUP 2 -->
+<div id="popup2" class="overlay" style="display:none;">
+  <div class="popup">
+    <p>kamu sayang aku gaa?</p>
+    <p>😑JANGAN KLIK TOMBOL ENGGA!!😑</p>
+    <button id="btnIya">IYA</button>
+    <button id="btnEngga">ENGGAK</button>
+  </div>
+</div>
+
+<h1>Haloo My Baby</h1>
+<img src="https://i.postimg.cc/pLX1HXMG/IMG-20251130-WA0026.jpg" width="200">
+<p>nama: Ivana Aflah Lutfiani</p>
+<p>aku pengen ngomongg nihh, dan akuu pengen kasih longteks tapi bukan kek longteks biasanya ini spesial untuk kamu</p>
+<p>__________________________________</p>
+<p>sayangg jangann tinggalinn aku yaaa, mass ndaa mauu kehilangann adekk, mass gaa mauu di tinggall adekk, mass tuhh pengenn bersamamuu selamanyaaa jangann tinggalinn mass okeyy? mass bakalann usahainn apapunn yang terbaikk untuk adekk, kaloo adekk lagii gaa baikk baikk ajaaa langsungg ajaaa ceritaaa kee masss, jangann takutt dann jangann maluu, ohh iyyyaaa dii jagaa jugaa kesehatannyaaa, jangann sering seringg mamm seblakk atauu yang pedess pedess bolehh ajaa sihhh mamm seblakk tapii gaa boleee seringg seringg okeyy? gaa boleee ujann ujanannn teruss ndaaa boleee mainn samaaa cowoo lagii, ingett yaa sayangg masss di sinii tuhh menghindariii ajakannn cewee cewee lainn, demii apaaa? demii hubungann akuu tetepp lanjuutt samaa adekk, dann jugaaa mass gaaa mauu nyakitii hatii adekk mass gaaa mauu balikinn traumaaa masalaluu adekk, soall kemarenn yangg adekk mikir kalo ndaa pantes buatt di cintaii ituu mass bakalann jelasinn semuanyaaa di sinii. adekk tuhh pantess bangett buatt di cintaii sayangg, semuaa orangg tuhh pantess kaloo menemukann pasangann yangg tepatt, dann kalii inii adekk tuhh pantess bangett buatt di cintaii, sumpahh mass gaa boongg, adekk tuhh pantess buatt dii cintaii, jadii jangann berpikirr kaloo adekk tuhh gaa pantess di cintaii, adekk lebihh dari kata sempurnaa, adekk lebih darii kataa cantikk, adekk lebihh darii kataa baikk, ingett mass selaluu adaa di sinii dampingii prosess adekk dann mass akann tetepp bersamaa adekk, apapunn masalahnyaa kitaa perbaikii bersama samaa</p>
+<p>Gak Akan Aku Biarkan Kamu Bersaing Dengan Wanita Lain</p>
+<p>_____________________________________________</p>
+<p>From Me Mv37Dev</p>
+<p>#putusbukansolusiutamadisuatumasalah</p>
+<p>I Will Love You Forever</p>
+<p>And</p>
+<p>I love you more than you know</p>
+
+<script>
+// POPUP LOGIC
+const popup1 = document.getElementById("popup1");
+const popup2 = document.getElementById("popup2");
+const btnOk = document.getElementById("btnOk");
+btnOk.onclick = function() {
+  popup1.style.display = "none";
+  popup2.style.display = "flex";
+}
+
+// TOMBOL ENGGA LARI-LARI
+const btnEngga = document.getElementById("btnEngga");
+btnEngga.onmouseover = function() {
+  const x = Math.floor(Math.random() * 200);
+  const y = Math.floor(Math.random() * 200);
+  btnEngga.style.left = x + "px";
+  btnEngga.style.top  = y + "px";
+}
+
+// TOMBOL IYA KLIK
+const btnIya = document.getElementById("btnIya");
+btnIya.onclick = function() {
+  popup2.style.display = "none"; // overlay hilang
+  alert("Jangan Lupa Di Baca Sampe Akhir Yaaa 🤍"); // bisa diganti redirect / buka konten lain
+}
+</script>
+
+</body>
+</html>
